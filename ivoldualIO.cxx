@@ -2013,7 +2013,12 @@ namespace {
   bool unit_spacing(const std::vector<COORD_TYPE> & spacing)
   // return true if spacing not defined or spacing along all axes equals 1.0
   {
-    return(spacing.size(), IJK::vector2pointer(spacing));
+    for (int i = 0; i+1 < spacing.size(); ++i) {
+      if (spacing[i] != spacing[i+1])
+        { return false; }
+    }
+
+    return true;
   }
 
 }

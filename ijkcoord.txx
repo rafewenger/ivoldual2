@@ -26,6 +26,7 @@
 
 #include <algorithm>
 #include <cmath>
+#include <numbers>
 
 #include "ijk.txx"
 
@@ -878,8 +879,8 @@ namespace IJK {
     compute_cos_min_max_polygon_angles
       (dimension, poly_vert, num_poly_vert, vertex_coord,
        cos_min, cos_max, num_angle);
-    min_angle = std::acos(cos_min) * 180.0/M_PI;
-    max_angle = std::acos(cos_max) * 180.0/M_PI;
+    min_angle = std::acos(cos_min) * 180.0/std::numbers::pi;
+    max_angle = std::acos(cos_max) * 180.0/std::numbers::pi;
   }
 
   ///@}
